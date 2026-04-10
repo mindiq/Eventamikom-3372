@@ -1,8 +1,9 @@
 <h1>IDENTITAS</h1>
 Nama : Hafidh Irfanudin Zuhdi<br>
 NIM : 24.12.3372<br>
+<h2>Live Demo</h2>
 link : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
-TUGAS 1<br>
+<h2>TUGAS 1</h2>
 1. Home  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
 2. Profil : https://eventamikom-3372-main-7duopz.free.laravel.cloud/profil<br>
 3. Katalog : https://eventamikom-3372-main-7duopz.free.laravel.cloud/katalog<br>
