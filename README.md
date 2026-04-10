@@ -1,14 +1,14 @@
 <h1>IDENTITAS</h1>
-Nama : Hafidh Irfanudin Zuhdi<br>
-NIM : 24.12.3372<br>
+Nama    : Hafidh Irfanudin Zuhdi<br>
+NIM     : 24.12.3372<br>
 <h2>Live Demo</h2>
-link : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
+link    : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
 <h2>TUGAS 1</h2>
-1. Home  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
-2. Profil : https://eventamikom-3372-main-7duopz.free.laravel.cloud/profil<br>
-3. Katalog : https://eventamikom-3372-main-7duopz.free.laravel.cloud/katalog<br>
-4. Bantuan : https://eventamikom-3372-main-7duopz.free.laravel.cloud/bantuan<br>
-5. Kontak : https://eventamikom-3372-main-7duopz.free.laravel.cloud/kontak
+1. Home     : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
+2. Profil   : https://eventamikom-3372-main-7duopz.free.laravel.cloud/profil<br>
+3. Katalog  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/katalog<br>
+4. Bantuan  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/bantuan<br>
+5. Kontak   : https://eventamikom-3372-main-7duopz.free.laravel.cloud/kontak
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
