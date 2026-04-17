@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EventController. extends Controller
+class EventsController extends Controller
 {
     //
-   public function indexAdmin()
+public function index()
 {
-    return view('admin.events');
+    return view('admin.events'); 
 }
 }

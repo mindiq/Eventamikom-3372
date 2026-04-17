@@ -9,6 +9,13 @@ link    : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
 3. Katalog  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/katalog<br>
 4. Bantuan  : https://eventamikom-3372-main-7duopz.free.laravel.cloud/bantuan<br>
 5. Kontak   : https://eventamikom-3372-main-7duopz.free.laravel.cloud/kontak
+<h2>TUGAS 2</h2>
+1. Halaman Dashbord : 
+2. Halaman event : <br>
+3. Halaman Transaksi :
+4. Halaman Beranda : https://eventamikom-3372-main-7duopz.free.laravel.cloud/<br>
+5. Halaman Detail Event : https://eventamikom-3372-main-7duopz.free.laravel.cloud/event-detail.html<br>
+6. Halaman Checkout : https://eventamikom-3372-main-7duopz.free.laravel.cloud/checkout.html<br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

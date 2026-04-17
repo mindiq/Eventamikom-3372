@@ -38,8 +38,8 @@
                 Dashboard
             </a>
 
-            <a href="{{ route('admin.events.index') }}"
-                class="flex items-center gap-3 px-4 py-3 {{ request()->is('admin/events*') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }} rounded-xl font-bold transition">
+            <a href="{{ route('admin.events') }}"
+                class="flex items-center gap-3 px-4 py-3 {{ request()->is('admin.events') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }} rounded-xl font-bold transition">
                 <svg class="w-5 h-5 text-indigo-400 group-hover:text-indigo-300" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
