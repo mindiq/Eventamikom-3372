@@ -5,7 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController; 
-use App\Http\Controllers\Admin\EventsController; 
+use App\Http\Controllers\Admin\EventController as EventAdminController;
+
 
 // --- Rute User Area ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -28,7 +29,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
     // Halaman Kelola Event
-    Route::get('/events', [EventsController::class, 'index'])->name('events');
+    Route::get('/events', [EventController::class, 'index'])->name('events');
     
     // Halaman Laporan Transaksi
     Route::get('/transactions', function () {
@@ -37,4 +38,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // TUGAS PERTEMUAN 3: Manajemen Kategori 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
+    Route::resource('events', EventAdminController::class);
+});
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('events', EventAdminController::class);
 });
