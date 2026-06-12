@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\Admin\AuthController;
 
 
 // --- Rute User Area ---
@@ -23,24 +24,25 @@ Route::get('/tentang', function () { return view('about'); })->name('about');
 
 
 // --- Rute Admin Area ---
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    
-    // Halaman Dashboard Utama Admin
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    
-    // Halaman Kelola Event
-    Route::get('/events', [EventController::class, 'index'])->name('events');
-    
-    // Halaman Laporan Transaksi
-    Route::get('/transactions', function () {
-        return view('admin.transactions');
-    })->name('transactions');
+// Top-level convenience redirect for /login
+Route::get('/login', function () {
+    return redirect()->route('admin.login');
+})->name('login');
 
-    // TUGAS PERTEMUAN 3: Manajemen Kategori 
-    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-
-    Route::resource('events', EventAdminController::class);
-});
+// Grouping untuk URL berawalan /admin
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('events', EventAdminController::class);
+    // Rute Login bebas akses
+    Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('login', [AuthController::class, 'login'])->name('login.post');
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+    // Mengamankan Route Administrasi di balik tembok (Middleware)
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('events', EventAdminController::class);
+        Route::get('transactions', function () {
+            return view('admin.transactions');
+        })->name('transactions.index');
+        Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+    });
 });
