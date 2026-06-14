@@ -16,6 +16,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/event', [EventController::class, 'show'])->name('events.show');
 Route::get('/checkout', [EventController::class, 'checkout'])->name('checkout');
 
+// Checkout routes for guest flow
+Route::get('/checkout/{event}', [App\Http\Controllers\CheckoutController::class, 'create'])->name('checkout.create');
+Route::post('/checkout/{event}', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
+
 Route::get('/my-ticket', [EventController::class, 'ticket'])->name('ticket');
 
 // Rute Tambahan Pertemuan 2
@@ -40,9 +44,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('events', EventAdminController::class);
-        Route::get('transactions', function () {
-            return view('admin.transactions');
-        })->name('transactions.index');
+        Route::get('transactions', [\App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('transactions.index');
         Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     });
 });
