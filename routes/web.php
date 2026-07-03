@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MidtransWebhookController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\CategoryController; 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
 use App\Http\Controllers\Admin\AuthController;
 
@@ -25,8 +26,10 @@ Route::get('/success/{order_id}', [App\Http\Controllers\CheckoutController::clas
 Route::get('/my-ticket', [EventController::class, 'ticket'])->name('ticket');
 
 // Rute Tambahan Pertemuan 2
-Route::get('/katalog', [EventController::class, 'index'])->name('katalog'); 
-Route::get('/tentang', function () { return view('about'); })->name('about');
+Route::get('/katalog', [EventController::class, 'index'])->name('katalog');
+Route::get('/tentang', function () {
+    return view('about');
+})->name('about');
 
 
 // --- Rute Admin Area ---
@@ -50,3 +53,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     });
 });
+
+Route::post('/midtrans/callback', [\App\Http\Controllers\MidtransWebhookController::class, 'handle']);
